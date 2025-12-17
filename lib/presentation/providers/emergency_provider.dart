@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:dio/dio.dart';
 import '../../domain/models/emergency_note.dart';
 import '../../domain/repositories/emergency_repository.dart';
 import '../../infrastructure/datasources/emergency_remote_datasource.dart';

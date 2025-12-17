@@ -50,14 +50,15 @@ class AppTheme {
           elevation: 2,
         ),
       ),
-      cardTheme: CardTheme(
-        color: cardColor,
-        elevation: 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        margin: const EdgeInsets.symmetric(vertical: 8),
-      ),
+     cardTheme:  CardThemeData(
+  color: cardColor,
+  elevation: 4,
+  margin: EdgeInsets.symmetric(vertical: 8),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(12),
+  ),
+),
+
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: greyColor,

@@ -24,7 +24,7 @@ final dioProvider = Provider<Dio>((ref) {
   dio.options.baseUrl = 'http://localhost:5000/api'; // Corrected back to include /api
   dio.interceptors.add(InterceptorsWrapper(
     onRequest: (options, handler) async {
-      final secureStorage = const FlutterSecureStorage();
+      const secureStorage = FlutterSecureStorage();
       final token = await secureStorage.read(key: 'jwt_token');
       if (token != null) {
         options.headers['Authorization'] = 'Bearer $token';
@@ -55,7 +55,7 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
 
 final signUpUseCaseProvider = Provider<SignUpUseCase>((ref) {
   final repository = ref.watch(authRepositoryProvider);
-  final secureStorage = const FlutterSecureStorage();
+  const secureStorage = FlutterSecureStorage();
   return SignUpUseCase(repository, secureStorage);
 });
 
@@ -102,7 +102,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<User?>> {
   Future<void> init() async {
     state = const AsyncValue.loading();
     try {
-      final secureStorage = const FlutterSecureStorage();
+      const secureStorage = FlutterSecureStorage();
       final storedToken = await secureStorage.read(key: 'jwt_token');
       final sharedPreferences = _ref.read(sharedPreferencesProvider);
       final storedUserId = sharedPreferences.getString('user_id');
@@ -163,7 +163,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<User?>> {
       _ref.read(userProvider.notifier).state = user; // Update the userProvider with the logged-in user
       state = AsyncValue.data(user);
     } catch (error, stackTrace) {
-      print('AuthNotifier.login error: ' + error.toString()); // DEBUG PRINT
+      print('AuthNotifier.login error: $error'); // DEBUG PRINT
       if (error is AppException) {
         state = AsyncValue.error(error, stackTrace);
       } else {
@@ -175,7 +175,7 @@ class AuthNotifier extends StateNotifier<AsyncValue<User?>> {
   Future<void> logout() async {
     state = const AsyncValue.loading();
     try {
-      final secureStorage = const FlutterSecureStorage();
+      const secureStorage = FlutterSecureStorage();
       await secureStorage.delete(key: 'jwt_token');
       final sharedPreferences = _ref.read(sharedPreferencesProvider); // Use ref to read sharedPreferencesProvider
       await sharedPreferences.remove('user_id');

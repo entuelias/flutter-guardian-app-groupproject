@@ -46,13 +46,13 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ],
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'G',
                   style: TextStyle(
                     fontSize: 80,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xFF007BFF), // Bold blue G
+                    color: Color(0xFF007BFF), // Bold blue G
                   ),
                 ),
               ),
@@ -61,9 +61,9 @@ class _SplashScreenState extends State<SplashScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.medical_services_outlined,
-                  color: const Color(0xFF007BFF), // Blue icon
+                  color: Color(0xFF007BFF), // Blue icon
                   size: 24,
                 ),
                 const SizedBox(width: 8),
@@ -74,9 +74,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
                 const SizedBox(width: 8),
-                Icon(
+                const Icon(
                   Icons.article_outlined,
-                  color: const Color(0xFF007BFF), // Blue icon
+                  color: Color(0xFF007BFF), // Blue icon
                   size: 24,
                 ),
               ],
@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const SizedBox(height: 24),
             const Text(
-              '\"Your Safety, Always Accessible ✨\"',
+              '"Your Safety, Always Accessible ✨"',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,

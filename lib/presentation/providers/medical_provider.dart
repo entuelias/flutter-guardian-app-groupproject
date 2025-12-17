@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:dio/dio.dart';
 import '../../domain/models/medical_note.dart';
 import '../../domain/repositories/medical_repository.dart';
 import '../../infrastructure/datasources/medical_remote_datasource.dart';

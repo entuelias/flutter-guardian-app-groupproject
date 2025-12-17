@@ -16,7 +16,7 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
   // Add Dio interceptor for JWT here, as Dio instance is created here
   dio.interceptors.add(InterceptorsWrapper(
     onRequest: (options, handler) async {
-      final secureStorage = const FlutterSecureStorage();
+      const secureStorage = FlutterSecureStorage();
       final token = await secureStorage.read(key: 'jwt_token');
       if (token != null && token.isNotEmpty) { // Ensure token is not null and not empty
         options.headers['Authorization'] = 'Bearer $token';

@@ -44,7 +44,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           }
         },
         error: (error, stackTrace) {
-          print('LoginScreen error callback: ' + error.toString()); // DEBUG PRINT
+          print('LoginScreen error callback: $error'); // DEBUG PRINT
           setState(() {
             _emailErrorText = null; // Clear old errors
             _passwordErrorText = null; // Clear old errors
@@ -106,13 +106,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                       ],
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'G',
                         style: TextStyle(
                           fontSize: 80,
                           fontWeight: FontWeight.bold,
-                          color: const Color(0xFF007BFF),
+                          color: Color(0xFF007BFF),
                         ),
                       ),
                     ),
@@ -129,19 +129,19 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'Email',
-                    prefixIcon: Icon(Icons.email_outlined),
+                    prefixIcon: const Icon(Icons.email_outlined),
                     filled: true,
                     fillColor: Colors.white,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       borderSide: BorderSide.none,
                     ),
                     errorText: _emailErrorText,
-                    errorBorder: OutlineInputBorder(
+                    errorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       borderSide: BorderSide(color: Colors.red, width: 1.0),
                     ),
-                    focusedErrorBorder: OutlineInputBorder(
+                    focusedErrorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       borderSide: BorderSide(color: Colors.red, width: 1.0),
                     ),
@@ -182,11 +182,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       },
                     ),
                     errorText: _passwordErrorText,
-                    errorBorder: OutlineInputBorder(
+                    errorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       borderSide: BorderSide(color: Colors.red, width: 1.0),
                     ),
-                    focusedErrorBorder: OutlineInputBorder(
+                    focusedErrorBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                       borderSide: BorderSide(color: Colors.red, width: 1.0),
                     ),

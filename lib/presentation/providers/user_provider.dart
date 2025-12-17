@@ -11,7 +11,7 @@ final userProvider = StateNotifierProvider<UserNotifier, AsyncValue<User?>>((ref
   const baseUrl = 'http://localhost:5000/api';
   final remoteDataSource = UserRemoteDataSource(dio, baseUrl);
   final repository = UserRepositoryImpl(remoteDataSource);
-  final secureStorage = const FlutterSecureStorage();
+  const secureStorage = FlutterSecureStorage();
   final getUserProfileUseCase = GetUserProfileUseCase(repository, secureStorage);
   
   return UserNotifier(getUserProfileUseCase);
